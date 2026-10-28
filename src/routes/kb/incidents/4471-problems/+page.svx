@@ -4,14 +4,14 @@ title: '#4471 · three problems, not one'
 owner: support desk
 status: draft
 reviewed: 2026-10-28
-signature: Flavio H.
+signature: v1.eyJzdWIiOiIzODIiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5MzIxOTUyNywiZXhwIjoxNzkzMzA1OTI3fQ.2lKYDRo1kHI78nxh_hH86Teh509qgcNcsy5YRbbe5Lc
 ---
 
 <script>
   import ProblemTable from '#lib/kb/ProblemTable.svelte';
   import Callout from '#lib/kb/Callout.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
-  const signature = 'Flavio H.';
+  const signature = 'v1.eyJzdWIiOiIzODIiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5MzIxOTUyNywiZXhwIjoxNzkzMzA1OTI3fQ.2lKYDRo1kHI78nxh_hH86Teh509qgcNcsy5YRbbe5Lc';
 </script>
 
 [#4471](/kb/incidents/4471) was merged as one known bug. The reports show three problems, and only the first has a fix queued.

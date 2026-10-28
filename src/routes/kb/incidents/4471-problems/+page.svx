@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · three problems, not one'
 owner: support desk
-status: draft
+status: living
 reviewed: 2026-10-28
 signature: v1.eyJzdWIiOiIzODIiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5MzIxOTUyNywiZXhwIjoxNzkzMzA1OTI3fQ.2lKYDRo1kHI78nxh_hH86Teh509qgcNcsy5YRbbe5Lc
 ---
@@ -33,6 +33,12 @@ Alder Physio, Pale Harbour and Copper Studio use booking-v3, which prints `MM/DD
 ## 3. Some bookings move by one day
 
 Five reports describe a one-day move, not a flip: R-41202, R-41209, R-41236, R-41344 and R-41620. The clues are "only June", an invite that arrived before the booking, and one meeting that showed as Tuesday in Lisbon and Monday in Toronto. This points to a time zone or daylight-saving bug. It is a guess from the reports and needs engineering to confirm.
+
+## Engineering update, #4471 closed 5 October
+
+- Parser: fixed (`fix(dates): parse dd/mm for eu locales`).
+- Form hint: won't fix, because the booking-v3 form is retired.
+- One-day moves: not in the update. The 5 reports stay unconfirmed.
 
 ## What to do
 

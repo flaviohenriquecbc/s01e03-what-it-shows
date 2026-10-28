@@ -1,0 +1,43 @@
+---
+layout: runbook
+title: '#4471 · three problems, not one'
+owner: support desk
+status: draft
+reviewed: 2026-10-28
+signature: Flavio H.
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  const signature = 'Flavio H.';
+</script>
+
+[#4471](/kb/incidents/4471) was merged as one known bug. The reports show three problems, and only the first has a fix queued.
+
+<ProblemTable />
+
+<Callout>
+Not known. Two of the three problems have no ticket of their own, and a fix for the parser will not close them.
+</Callout>
+
+## 1. The parser flips day and month
+
+The shared parser reads every date month first. All 11 tenants write the day first, so app and email reports come out flipped. This is the bug #4471 describes.
+
+## 2. The booking-v3 form hint says MM/DD
+
+Alder Physio, Pale Harbour and Copper Studio use booking-v3, which prints `MM/DD/YYYY` under the date field. Their people type month first, and the form reads it day first. Fixing the parser does not change this. Intake tagged about half of these reports `parser`, which is wrong.
+
+## 3. Some bookings move by one day
+
+Five reports describe a one-day move, not a flip: R-41202, R-41209, R-41236, R-41344 and R-41620. The clues are "only June", an invite that arrived before the booking, and one meeting that showed as Tuesday in Lisbon and Monday in Toronto. This points to a time zone or daylight-saving bug. It is a guess from the reports and needs engineering to confirm.
+
+## What to do
+
+- Keep #4471 for problem 1 only.
+- Open a ticket for problem 2 and one for problem 3.
+- Do not merge on subject line alone ([decision 0001](/kb/decisions/0001-dedupe-by-subject)): it hid these two problems inside #4471.
+
+<RenderStamp {signature} />

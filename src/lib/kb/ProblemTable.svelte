@@ -6,10 +6,9 @@
 
   const merged = uniqueById(reports as Report[]).filter((r) => r.mergedInto === 4471);
   const oneDay = merged.filter((r) => notes.oneDayMove.includes(r.id));
-  const rest = merged.filter((r) => !notes.oneDayMove.includes(r.id));
   const rows = [
-    { problem: 'parser flips day and month', n: rest.filter((r) => causeOf(r, tenantOf(r)) === 'parser').length },
-    { problem: 'booking-v3 form hint says MM/DD', n: rest.filter((r) => causeOf(r, tenantOf(r)) === 'hint').length },
+    { problem: 'parser flips day and month', n: merged.filter((r) => causeOf(r, tenantOf(r)) === 'parser').length },
+    { problem: 'booking-v3 form hint says MM/DD', n: merged.filter((r) => causeOf(r, tenantOf(r)) === 'hint').length },
     { problem: 'booking moves by one day', n: oneDay.length },
   ];
 </script>
@@ -21,3 +20,4 @@
     {#each rows as r (r.problem)}<tr><td>{r.problem}</td><td>{r.n}</td></tr>{/each}
   </tbody>
 </table>
+<p class="note">Counted where the desk files them, by tenant. The {oneDay.length} one-day moves are filed under the parser and are also listed as their own problem.</p>

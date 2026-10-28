@@ -8,10 +8,11 @@
 <p><a href="/kb/incidents/4471">#4471</a> was merged as one known bug. The reports show three problems, and only the first has a fix queued.</p>
 <p><strong>412</strong> reports merged into #4471 · <strong>3</strong> problems</p>
 <table><thead><tr><th>problem</th><th>reports</th></tr></thead><tbody>
-<tr><td>parser flips day and month</td><td>374</td></tr>
+<tr><td>parser flips day and month</td><td>379</td></tr>
 <tr><td>booking-v3 form hint says MM/DD</td><td>33</td></tr>
 <tr><td>booking moves by one day</td><td>5</td></tr>
 </tbody></table>
+<p>Counted where the desk files them, by tenant. The 5 one-day moves are filed under the parser and are also listed as their own problem.</p>
 <blockquote>Not known. Two of the three problems have no ticket of their own, and a fix for the parser will not close them.</blockquote>
 <h2>1. The parser flips day and month</h2>
 <p>The shared parser reads every date month first. All 11 tenants write the day first, so app and email reports come out flipped. This is the bug #4471 describes.</p>
